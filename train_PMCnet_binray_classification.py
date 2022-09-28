@@ -127,6 +127,7 @@ dosave = 0
 use_cuda = torch.cuda.is_available()
 lr = 1e-3
 results_dir = 'results/Ionosphere'  
+os.makedirs(results_dir, exist_ok=True) 
 
 # initialize the parameters by the learnt model derived by MLE
 # load the parameters 
