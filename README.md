@@ -1,3 +1,32 @@
 # PMCnet
-Bayesian neural networks (BNNs) have received an increased interest in the last years. In BNNs, a complete posterior distribution of the unknown weight and bias parameters of the network is produced during the training stage. This probabilistic estimation offers several advantages with respect to point-wise estimates, in particular, the ability to provide uncertainty quantification when predicting new data. This feature inherent to the Bayesian paradigm, is useful in countless machine learning applications. It is particularly appealing in areas where decision-making has a crucial impact, such as medical healthcare or autonomous driving. The main challenge of BNNs is the computational cost of the training procedure since Bayesian techniques often face a severe curse of dimensionality. Adaptive importance sampling (AIS) is one of the most prominent Monte Carlo methodologies benefiting from sounded convergence guarantees and ease for adaptation. This work aims to show that AIS constitutes a successful approach for designing BNNs. More precisely, we propose a novel algorithm PMCnet that includes an efficient adaptation mechanism, exploiting geometric information on the complex (often multimodal) posterior distribution. % without increasing the computational cost. 
-Numerical results illustrate the excellent performance and the improved exploration capabilities of the proposed method for both shallow and deep neural networks.
+## Efficient Bayes Inference in Neural Networks through Adaptive Importance Sampling
+This repository contains the Pytorch implementation of the PMCnet and PMCnet-light applied to the problem of approximating the complete posterior distribution of the unknown weight and bias parameters of neural network in Bayesian neural networks (BNNs). It provides uncertainty quantification when predicting new data. Adaptive importance sampling (AIS) is one of the most prominent Monte Carlo methodologies benefiting from sounded convergence guarantees and ease for adaptation. This work aims to show that AIS constitutes a successful approach for designing BNNs. More precisely, we propose a novel algorithm PMCnet that includes an efficient adaptation mechanism, exploiting geometric information on the complex (often multimodal) posterior distribution. % without increasing the computational cost. 
+
+## Dependencies
+Python version 3.6.10\
+Pytorch 1.7.0\
+CUDA 11.0\
+scikit-learn 0.24.2\
+numpy 1.19.5
+
+## Training
+To initialize the parameters of BNN, we make use of the learnt parameters derived by MLE, which is put in the folder _params_. To start the training, run 
+
+```
+CUDA_VISIBLE_DEVICE=1 python3 main.py
+```
+
+## Demo file
+Here we give three examples of applying PMCnet for binay classification, multi-class classification and regression task respectively.\
+train_PMCnet_binray_classification.py: shows how to train PMCnet for binay classification task\
+train_PMCnet_multiclass_classification.py: shows how to  train PMCnet for multi-class classification task\
+train_PMCnet_regression.py: shows how to  train PMCnet for regression task\
+PMCnet_algo.py: the PMCnet algorithm for classification task and regression task\
+PMCnet_light_algo.py: the PMCnet-light algorithm for classification task for large-scale problem\
+PMCnet_light_algo_regression.py: the PMCnet-light algorithm for regression task for large-scale problem\
+
+## Authors
+Yunshi Huang - e-mail: yunshi.huang@centralesupelec.fr - PhD Student\
+Víctor Elvira -[website](https://victorelvira.github.io/) \
+Emilie Chouzenoux -[website](https://pages.saclay.inria.fr/emilie.chouzenoux/)\
+Jean-Christophe Pesquet -[website](https://pesquet.info/)
