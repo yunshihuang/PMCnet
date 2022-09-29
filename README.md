@@ -29,4 +29,4 @@ PMCnet_light_algo_regression.py: the PMCnet-light algorithm for regression task 
 Yunshi Huang - e-mail: yunshi.huang@centralesupelec.fr - PhD Student\
 Víctor Elvira -[website](https://victorelvira.github.io/) \
 Emilie Chouzenoux -[website](https://pages.saclay.inria.fr/emilie.chouzenoux/)\
-Jean-Christophe Pesquet -[website](https://pesquet.info/)
+Jean-Christophe Pesquet -[website](https://jc.pesquet.eu/)
