@@ -23,7 +23,7 @@ train_PMCnet_multiclass_classification.py: shows how to train PMCnet under multi
 train_PMCnet_regression.py: shows how to train PMCnet under regression task for dataset _autoMPG_\
 PMCnet_algo.py: the PMCnet algorithm under classification task and regression task\
 PMCnet_light_algo.py: the PMCnet-light algorithm under classification task for large-scale problem\
-PMCnet_light_algo_regression.py: the PMCnet-light algorithm under regression task for large-scale problem\
+PMCnet_light_algo_regression.py: the PMCnet-light algorithm under regression task for large-scale problem
 
 ## Authors
 Yunshi Huang - e-mail: yunshi.huang@centralesupelec.fr - PhD Student\
