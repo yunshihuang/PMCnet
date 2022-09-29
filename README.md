@@ -13,7 +13,7 @@ numpy 1.19.5
 To initialize the parameters of BNN, we make use of the learnt parameters derived by MLE, which is put in the folder _params_. To start the training, run
 
 ```
-CUDA_VISIBLE_DEVICE=1 python3 train_PMCnet_binray_classification.py
+CUDA_VISIBLE_DEVICE=0 python3 train_PMCnet_binray_classification.py
 ```
 
 ## Demo file
