@@ -17,13 +17,13 @@ CUDA_VISIBLE_DEVICE=1 python3 main.py
 ```
 
 ## Demo file
-Here we give three examples of applying PMCnet for binay classification, multi-class classification and regression task respectively.\
-train_PMCnet_binray_classification.py: shows how to train PMCnet for binay classification task\
-train_PMCnet_multiclass_classification.py: shows how to  train PMCnet for multi-class classification task\
-train_PMCnet_regression.py: shows how to  train PMCnet for regression task\
-PMCnet_algo.py: the PMCnet algorithm for classification task and regression task\
-PMCnet_light_algo.py: the PMCnet-light algorithm for classification task for large-scale problem\
-PMCnet_light_algo_regression.py: the PMCnet-light algorithm for regression task for large-scale problem\
+Here we give three examples of applying PMCnet under binay classification, multi-class classification and regression task respectively.\
+train_PMCnet_binray_classification.py: shows how to train PMCnet under binay classification task for dataset _Ionosphere_\
+train_PMCnet_multiclass_classification.py: shows how to train PMCnet under multi-class classification task for dataset _Glass_\
+train_PMCnet_regression.py: shows how to train PMCnet under regression task for dataset _autoMPG_\
+PMCnet_algo.py: the PMCnet algorithm under classification task and regression task\
+PMCnet_light_algo.py: the PMCnet-light algorithm under classification task for large-scale problem\
+PMCnet_light_algo_regression.py: the PMCnet-light algorithm under regression task for large-scale problem\
 
 ## Authors
 Yunshi Huang - e-mail: yunshi.huang@centralesupelec.fr - PhD Student\
