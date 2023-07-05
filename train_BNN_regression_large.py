@@ -19,11 +19,10 @@ import pandas as pd
 from torchvision import datasets, transforms
 from sklearn.model_selection import train_test_split
 import pickle
-from functions_new import *
-from algo_new import *
-from model_regression import *
-from golden_search import *
-from run_BNN_fixedReg_regression_large import *
+from Model_files.functions import *
+from Model_files.PMCnet_light_algo_regression_large import *
+from Model_files.golden_search import *
+from Model_files.run_PMCnet_fixedReg_regression_large import *
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
@@ -181,6 +180,13 @@ tp['regularization_weight'] = 0.2360689191000000#1.480264670576135
 epsilon1 = 1e-50
 epsilon2 = 1e-50
 
+W1_mu = W1
+b1_mu = b1
+W2_mu = W2
+b2_mu = b2
+W3_mu = W3
+b3_mu = b3
+
 # est_ml is the set of all parameters (W,b), stacked in a column
 est_ml1 = torch.cat((torch.transpose(W1,0,1).reshape(M[0]*M[1],1),b1.reshape(M[1],1)),0)
 est_ml2 = torch.cat((torch.transpose(W2,0,1).reshape(M[1]*M[2],1),b2.reshape(M[2],1)),0)
@@ -212,12 +218,12 @@ if dogolden_search == 0:
     ESS = np.zeros((50,T))
     
         ##This line opens a log file
-    with open("bug_log_BNN_multiclass.txt", "w") as log:
+    with open("bug_log_BNN_regression_large.txt", "w") as log:
 
         try:
             for i in range(1): 
                 myprint('This is simulation {}'.format(i),logger)
-                output = SL_PMC_Adapt_Cov_new(test_loader,N,K,T,sig_prop,lr,gr_period,tp,est_ml,epsilon1,epsilon2)
+                output = SL_PMC_Adapt_Cov_new(N,K,T,sig_prop,lr,gr_period,tp,est_ml,epsilon1,epsilon2)
 
                 output_vec.append(output)
 
@@ -253,10 +259,10 @@ else:
     myprint('is_binary is {}'.format(is_binary),logger)
 
     ##This line opens a log file
-    with open("bug_log_BNN_regression.txt", "w") as log:
+    with open("bug_log_BNN_regression_large.txt", "w") as log:
 
         try:
-            crit = lambda reg: run_BNN_fixedReg_regression_large(train_loader,test_loader,simulations,reg,loss,N_resampled,results_dir, N,K,T,sig_prop,lr,gr_period,tp,est_ml,epsilon1,epsilon2,logger)
+            crit = lambda reg: run_BNN_fixedReg_regression_large(simulations,reg,loss,N_resampled,results_dir, x_val, y_val, is_binary, N,K,T,sig_prop,lr,gr_period,tp,est_ml,epsilon1,epsilon2,logger)
             reg_final,reg_list,Loss_list = golden_search(crit,rangereg[0],rangereg[1],precision,logger)
 
             reg1 = np.int(np.round(reg_final,4)*10000)
