@@ -23,6 +23,7 @@ from Model_files.functions import *
 from Model_files.PMCnet_light_algo_regression_large import *
 from Model_files.golden_search import *
 from Model_files.run_PMCnet_fixedReg_regression_large import *
+from Model_files.model_regression import *
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import RandomOverSampler
